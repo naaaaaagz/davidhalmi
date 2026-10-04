@@ -1247,6 +1247,10 @@
           active = section.dataset.railSection;
         }
       });
+      const atPageBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+      if (atPageBottom && visibleSection("contact")) {
+        active = "contact";
+      }
       if (active !== activeRailName) {
         activeRailName = active;
         setActiveRail(active, window.scrollY > 80);
